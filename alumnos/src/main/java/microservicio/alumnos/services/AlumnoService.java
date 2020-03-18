@@ -1,18 +1,11 @@
 package microservicio.alumnos.services;
 
-import java.util.Optional;
 import microservicio.alumnos.models.entity.Alumno;
+import microservicio.commons.services.CommonService;
 
 /**
  * AlumnoService
  */
-public interface AlumnoService {
+public interface AlumnoService extends CommonService<Alumno> {
 
-    public Iterable<Alumno> findAll();
-
-    public Optional<Alumno> findById(Long id);
-
-    public Alumno save(Alumno alumno);
-
-    public void deleteById(Long id);
 }

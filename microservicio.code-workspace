@@ -1,5 +1,8 @@
 {
 	"folders": [
+		// {
+		// 	// "path": "."
+		// },
 		{
 			"name": "alumnos",
 			"path": "alumnos"
@@ -23,7 +26,7 @@
 			"**/.project": true,
 			"**/.settings": true,
 			"**/.factorypath": true,
-			// "**/.gradle": true,
+			"**/.gradle": true,
 			"**/bin": true,
 		},
 		"java.configuration.updateBuildConfiguration": "automatic"
