@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"name": "alumnos",
+			"path": "alumnos"
+		},
+		{
+			"name": "eureka",
+			"path": "eureka"
+		},
+		{
+			"name": "zuul",
+			"path": "zuul"
+		},
+		{
+			"name": "commons",
+			"path": "commons"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.classpath": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.factorypath": true,
+			// "**/.gradle": true,
+			"**/bin": true,
+		},
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
