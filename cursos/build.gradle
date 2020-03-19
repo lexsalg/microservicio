@@ -4,10 +4,6 @@ plugins {
 	id 'java'
 }
 
-group = 'microservicio'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
 configurations {
 	developmentOnly
 	runtimeClasspath {
@@ -24,6 +20,7 @@ ext {
 }
 
 dependencies {
+	implementation project(':commons')
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
