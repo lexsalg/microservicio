@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class CommonServiceImpl<E, R extends CrudRepository<E, Long>> implements CommonService<E> {
 
     @Autowired
-    private R repository;
+    protected R repository;
 
     @Override
     @Transactional
