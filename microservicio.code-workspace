@@ -1,8 +1,5 @@
 {
 	"folders": [
-		// {
-		// 	// "path": "."
-		// },
 		{
 			"name": "alumnos",
 			"path": "alumnos"
@@ -18,6 +15,10 @@
 		{
 			"name": "commons",
 			"path": "commons"
+		},
+		{
+			"name": "cursos",
+			"path": "cursos"
 		}
 	],
 	"settings": {
