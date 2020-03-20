@@ -1,5 +1,6 @@
 package microservicio.cursos.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import microservicio.commons.controllers.CommonController;
+import microservicio.commonsalumnos.models.entity.Alumno;
 import microservicio.cursos.models.entity.Curso;
 import microservicio.cursos.services.CursoService;
 
@@ -20,7 +22,7 @@ import microservicio.cursos.services.CursoService;
 public class CursoController extends CommonController<Curso, CursoService> {
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> editar(@RequestBody Curso curso, @PathVariable Long id) {
+    public ResponseEntity<?> editar(@PathVariable Long id, @RequestBody Curso curso) {
         Optional<Curso> o = this.service.findById(id);
         if (!o.isPresent())
             return ResponseEntity.notFound().build();
@@ -29,5 +31,31 @@ public class CursoController extends CommonController<Curso, CursoService> {
         c.setNombre(curso.getNombre());
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(c));
 
+    }
+
+    @PutMapping("/{id}/asignar-alumnos")
+    public ResponseEntity<?> asignarAlumnos(@PathVariable Long id, @RequestBody List<Alumno> alumnos) {
+        Optional<Curso> o = this.service.findById(id);
+        if (!o.isPresent())
+            return ResponseEntity.notFound().build();
+
+        Curso dbCurso = o.get();
+
+        alumnos.forEach(a -> dbCurso.addAlumno(a));
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCurso));
+    }
+
+    @PutMapping("/{id}/eliminar-alumno")
+    public ResponseEntity<?> eliminarAlumno(@PathVariable Long id, @RequestBody Alumno alumno) {
+        Optional<Curso> o = this.service.findById(id);
+        if (!o.isPresent())
+            return ResponseEntity.notFound().build();
+
+        Curso dbCurso = o.get();
+
+        dbCurso.removeAlumno(alumno);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCurso));
     }
 }
