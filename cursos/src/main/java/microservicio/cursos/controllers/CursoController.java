@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import microservicio.commons.controllers.CommonController;
 import microservicio.commonsalumnos.models.entity.Alumno;
 import microservicio.cursos.models.entity.Curso;
 import microservicio.cursos.services.CursoService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * CursoController
@@ -58,4 +60,12 @@ public class CursoController extends CommonController<Curso, CursoService> {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCurso));
     }
+
+    @GetMapping("/alumno/{id}")
+    public ResponseEntity<?> getMethodName(@PathVariable Long id) {
+        Curso curso = service.findCursoByAlumnoId(id);
+
+        return ResponseEntity.ok(curso);
+    }
+
 }

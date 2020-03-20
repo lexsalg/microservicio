@@ -7,5 +7,5 @@ import microservicio.cursos.models.entity.Curso;
  * CursoService
  */
 public interface CursoService extends CommonService<Curso> {
-
+    public Curso findCursoByAlumnoId(Long id);
 }
