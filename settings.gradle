@@ -2,7 +2,9 @@ rootProject.name = 'microservicio'
 
 
 include 'commons'
+include 'commons-alumnos'
 include 'alumnos'
 include 'cursos'
 include 'eureka'
 include 'zuul'
+

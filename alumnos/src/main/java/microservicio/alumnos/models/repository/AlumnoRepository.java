@@ -2,7 +2,7 @@ package microservicio.alumnos.models.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import microservicio.alumnos.models.entity.Alumno;
+import microservicio.commonsalumnos.models.entity.Alumno;
 
 /**
  * AlumnoRepository

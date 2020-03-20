@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import microservicio.alumnos.models.entity.Alumno;
 import microservicio.alumnos.services.AlumnoService;
 import microservicio.commons.controllers.CommonController;
+import microservicio.commonsalumnos.models.entity.Alumno;
 
 /**
  * AlumnoController

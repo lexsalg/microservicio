@@ -1,7 +1,7 @@
 package microservicio.alumnos.services;
 
-import microservicio.alumnos.models.entity.Alumno;
 import microservicio.commons.services.CommonService;
+import microservicio.commonsalumnos.models.entity.Alumno;
 
 /**
  * AlumnoService

@@ -19,6 +19,10 @@
 		{
 			"name": "cursos",
 			"path": "cursos"
+		},
+		{
+			"name": "commons-alumnos",
+			"path": "commons-alumnos"
 		}
 	],
 	"settings": {
