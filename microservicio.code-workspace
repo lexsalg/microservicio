@@ -23,6 +23,10 @@
 		{
 			"name": "commons-alumnos",
 			"path": "commons-alumnos"
+		},
+		{
+			"name": "examenes",
+			"path": "examenes"
 		}
 	],
 	"settings": {

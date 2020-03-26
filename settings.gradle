@@ -5,6 +5,7 @@ include 'commons'
 include 'commons-alumnos'
 include 'alumnos'
 include 'cursos'
+include 'examenes'
 include 'eureka'
 include 'zuul'
 
