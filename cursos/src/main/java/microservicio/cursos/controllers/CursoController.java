@@ -15,7 +15,6 @@ import microservicio.commons.controllers.CommonController;
 import microservicio.commonsalumnos.models.entity.Alumno;
 import microservicio.cursos.models.entity.Curso;
 import microservicio.cursos.services.CursoService;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * CursoController
