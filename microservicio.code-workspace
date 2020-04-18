@@ -1,5 +1,8 @@
 {
 	"folders": [
+		// {
+		// 	"path": "."
+		// },
 		{
 			"name": "alumnos",
 			"path": "alumnos"
@@ -21,12 +24,16 @@
 			"path": "cursos"
 		},
 		{
-			"name": "commons-alumnos",
-			"path": "commons-alumnos"
-		},
-		{
 			"name": "examenes",
 			"path": "examenes"
+		},
+		{
+			"name": "commons-alumnos",
+			"path": "commons-alumnos"
+		},		
+		{
+			"name": "commons-examenes",
+			"path": "commons-examenes"
 		}
 	],
 	"settings": {
