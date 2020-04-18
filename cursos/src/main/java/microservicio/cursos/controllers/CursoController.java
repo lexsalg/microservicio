@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import microservicio.commons.controllers.CommonController;
 import microservicio.commonsalumnos.models.entity.Alumno;
+import microservicio.commonsexamenes.models.entity.Examen;
 import microservicio.cursos.models.entity.Curso;
 import microservicio.cursos.services.CursoService;
 
@@ -65,6 +66,32 @@ public class CursoController extends CommonController<Curso, CursoService> {
         Curso curso = service.findCursoByAlumnoId(id);
 
         return ResponseEntity.ok(curso);
+    }
+
+    @PutMapping("/{id}/asignar-examenes")
+    public ResponseEntity<?> asignarExamenes(@PathVariable Long id, @RequestBody List<Examen> examenes) {
+        Optional<Curso> o = this.service.findById(id);
+        if (!o.isPresent())
+            return ResponseEntity.notFound().build();
+
+        Curso dbCurso = o.get();
+
+        examenes.forEach(dbCurso::addExamen);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCurso));
+    }
+
+    @PutMapping("/{id}/eliminar-examen")
+    public ResponseEntity<?> eliminarExmen(@PathVariable Long id, @RequestBody Examen examen) {
+        Optional<Curso> o = this.service.findById(id);
+        if (!o.isPresent())
+            return ResponseEntity.notFound().build();
+
+        Curso dbCurso = o.get();
+
+        dbCurso.removeExamen(examen);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCurso));
     }
 
 }

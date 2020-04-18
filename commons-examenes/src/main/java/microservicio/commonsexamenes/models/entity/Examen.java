@@ -1,4 +1,4 @@
-package microservicio.examenes.models.entity;
+package microservicio.commonsexamenes.models.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -90,6 +90,19 @@ public class Examen {
     public void removePregunta(Pregunta pregunta) {
         this.preguntas.remove(pregunta);
         pregunta.setExamen(null);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (!(obj instanceof Examen))
+            return false;
+
+        Examen a = (Examen) obj;
+
+        return this.id != null && this.id.equals(a.getId());
     }
 
 }

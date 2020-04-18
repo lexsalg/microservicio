@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import microservicio.commons.controllers.CommonController;
-import microservicio.examenes.models.entity.Examen;
+import microservicio.commonsexamenes.models.entity.Examen;
 // import microservicio.examenes.models.entity.Pregunta;
 import microservicio.examenes.services.ExamenService;
 
