@@ -15,6 +15,7 @@ import microservicio.commons.controllers.CommonController;
 import microservicio.commonsexamenes.models.entity.Examen;
 // import microservicio.examenes.models.entity.Pregunta;
 import microservicio.examenes.services.ExamenService;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 public class ExamenController extends CommonController<Examen, ExamenService> {
@@ -65,4 +66,15 @@ public class ExamenController extends CommonController<Examen, ExamenService> {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(examenDb));
     }
+
+    @GetMapping("/filtrar/{term}")
+    public ResponseEntity<?> filtrar(@PathVariable String term) {
+        return ResponseEntity.ok(service.findByNombre(term));
+    }
+
+    @GetMapping("/asignaturas")
+    public ResponseEntity<?> listarAsignaturas() {
+        return ResponseEntity.ok(service.findAllAsignaturas());
+    }
+
 }

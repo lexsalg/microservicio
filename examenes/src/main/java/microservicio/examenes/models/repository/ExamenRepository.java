@@ -1,5 +1,8 @@
 package microservicio.examenes.models.repository;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import microservicio.commonsexamenes.models.entity.Examen;
@@ -9,4 +12,6 @@ import microservicio.commonsexamenes.models.entity.Examen;
  */
 public interface ExamenRepository extends CrudRepository<Examen, Long> {
 
+    @Query("SELECT e FROM Examen e WHERE e.nombre like %?1%")
+    public List<Examen> findByNombre(String term);
 }
