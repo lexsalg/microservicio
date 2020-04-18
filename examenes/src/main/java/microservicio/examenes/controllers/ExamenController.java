@@ -4,8 +4,11 @@ package microservicio.examenes.controllers;
 // import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,7 +52,10 @@ public class ExamenController extends CommonController<Examen, ExamenService> {
     // }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> editar(@PathVariable Long id, @RequestBody Examen examen) {
+    public ResponseEntity<?> editar(@PathVariable Long id, @Valid @RequestBody Examen examen, BindingResult result) {
+
+        if (result.hasErrors())
+            return this.validar(result);
 
         Optional<Examen> o = service.findById(id);
 

@@ -17,6 +17,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -30,6 +32,7 @@ public class Examen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String nombre;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -41,6 +44,7 @@ public class Examen {
     private List<Pregunta> preguntas;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @NotNull
     private Asignatura asignatura;
 
     public Examen() {
