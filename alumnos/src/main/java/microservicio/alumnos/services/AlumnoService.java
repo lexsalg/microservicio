@@ -11,4 +11,8 @@ import microservicio.commonsalumnos.models.entity.Alumno;
 public interface AlumnoService extends CommonService<Alumno> {
 
     public List<Alumno> findByNombreOrApellido(String value);
+
+    public Iterable<Alumno> findAllById(Iterable<Long> ids);
+
+    public void eliminarCursoAlumnoPorId(Long id);
 }

@@ -12,7 +12,7 @@ import microservicio.commonsalumnos.models.entity.Alumno;
  */
 public interface AlumnoRepository extends PagingAndSortingRepository<Alumno, Long> {
 
-    @Query("SELECT a FROM Alumno a WHERE a.nombre LIKE %?1% or a.apellido LIKE %?1%")
+    @Query("SELECT a FROM Alumno a WHERE UPPER(a.nombre) LIKE UPPER(CONCAT('%',?1,'%')) or UPPER(a.apellido) LIKE UPPER(CONCAT('%',?1,'%'))")
     public List<Alumno> findByNombreOrApellido(String value);
 
 }
