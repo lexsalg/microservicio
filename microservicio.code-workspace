@@ -1,11 +1,7 @@
 {
 	"folders": [
-		// {
-		// 	"path": "."
-		// },
 		{
-			"name": "alumnos",
-			"path": "alumnos"
+			"path": "."
 		},
 		{
 			"name": "eureka",
@@ -20,6 +16,18 @@
 			"path": "commons"
 		},
 		{
+			"name": "commons-alumnos",
+			"path": "commons-alumnos"
+		},
+		{
+			"name": "commons-examenes",
+			"path": "commons-examenes"
+		},
+		{
+			"name": "alumnos",
+			"path": "alumnos"
+		},
+		{
 			"name": "cursos",
 			"path": "cursos"
 		},
@@ -28,12 +36,8 @@
 			"path": "examenes"
 		},
 		{
-			"name": "commons-alumnos",
-			"path": "commons-alumnos"
-		},		
-		{
-			"name": "commons-examenes",
-			"path": "commons-examenes"
+			"name": "respuestas",
+			"path": "respuestas"
 		}
 	],
 	"settings": {
